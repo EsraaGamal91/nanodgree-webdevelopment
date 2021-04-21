@@ -39,6 +39,8 @@ will open port 8081
 
 run command 'npm run test'
 
+# Worker Server
 
+the site will be available even when you stop your local serve
 
 
