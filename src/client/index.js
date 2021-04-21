@@ -1,4 +1,4 @@
-import { checkForName } from './js/nameChecker'
+import { checkNumbers } from './js/checkNumbers'
 import { handleSubmit } from './js/formHandler'
 
 //console.log(checkForName);
@@ -13,6 +13,6 @@ import { handleSubmit } from './js/formHandler'
 
 
 export {
-    checkForName,
+    checkNumbers,
     handleSubmit
 }

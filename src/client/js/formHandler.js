@@ -2,22 +2,18 @@ function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
+    let formText = document.getElementById('name').value  
+     
+    let checkNumbers = Client.checkNumbers(formText);
+    if(checkNumbers){
+        document.getElementById('outputApi').innerHTML = 
+        "<p style='color:red'>You Cannot enter Just Numbers</p>"
+    }
 
-    // console.log("::: Form Submitted :::")
-    // fetch('http://localhost:8081/test')
-    // .then(res => res.json())
-    // .then(function(res) {
-    //     document.getElementById('results').innerHTML = res.message
-    // })
+    else if(formText !="")
+    {
 
-    // fetch('https://jsonplaceholder.typicode.com/todos/1')
-    // .then(res => res.json())
-    // .then(function(res) {
-    //     document.getElementById('outputApi').innerHTML = res.title
-    //     console.log(res)
-    // })
-
+    
     const formdata = new FormData();
 formdata.append("key", "423cdaeb174e0b13c2e4902953928d5c");
 formdata.append("txt", formText);
@@ -80,6 +76,13 @@ const requestOptions = {
        // console.log(res)
     })
   .catch(error => console.log('error', error));
+}
+
+else {
+    document.getElementById('outputApi').innerHTML = 
+    "<p style='color:red'>You Cannot enter Empty Text</p>"
+}
+
 }
 
 export { handleSubmit }
